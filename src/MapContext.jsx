@@ -1,5 +1,4 @@
-// src/MapContext.js
-import React, { createContext, useContext, useRef } from 'react';
+import React, { createContext, useContext, useRef, useEffect, useState } from 'react';
 
 const MapContext = createContext();
 
@@ -8,7 +7,7 @@ const MapProvider = ({ children }) => {
     const markersRef = useRef([]);
 
     return (
-        <MapContext.Provider value={{ mapRef, markersRef }}>
+        <MapContext.Provider value={{ mapRef, markersRef}}>
             {children}
         </MapContext.Provider>
     );
@@ -20,6 +19,6 @@ const useMap = () => {
         throw new Error('useMap must be used within a MapProvider');
     }
     return context;
-}
+};
 
 export { MapProvider, useMap };

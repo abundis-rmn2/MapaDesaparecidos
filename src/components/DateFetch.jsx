@@ -33,7 +33,7 @@ const DateFetch = ({ onFetchRecords, currentmarkers }) => {
 
             // Transform the records to include lat, lon, and additional attributes
             const transformedRecords = records.map((record) => {
-                console.log('Fetched Record:', record); // Log each fetched record
+                //console.log('Fetched Record:', record); // Log each fetched record
 
                 const [lat, lon] = record.lat_long ? record.lat_long.split(',').map(coord => parseFloat(coord)) : [null, null];
 
@@ -53,7 +53,7 @@ const DateFetch = ({ onFetchRecords, currentmarkers }) => {
 
             setFetchedRecords(transformedRecords);
 
-            console.log('Fetched and Transformed Records:', transformedRecords);
+            //console.log('Fetched and Transformed Records:', transformedRecords);
         } catch (err) {
             console.error('Error fetching records:', err);
             setError('Error fetching records');
@@ -94,6 +94,7 @@ const DateFetch = ({ onFetchRecords, currentmarkers }) => {
 
             // Alert the number of new markers added
             alert(`Added ${newMarkersCount} new markers to the map.`);
+            
         }
     };
 

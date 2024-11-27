@@ -3,7 +3,6 @@ import React, { useEffect, forwardRef, useImperativeHandle } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useMap } from '../MapContext';
-import CurrentMarkers from './CurrentMarkers';
 
 const MapComponent = forwardRef((props, ref) => {
     const { mapRef, markersRef } = useMap();
@@ -64,7 +63,6 @@ const MapComponent = forwardRef((props, ref) => {
     return (
         <div id="map-container" style={{ position: 'relative', height: '100vh', width: '100%' }}>
             <div id="map" style={{ height: '100%', width: '100%' }}></div>
-            <CurrentMarkers />
         </div>
     );
 });
